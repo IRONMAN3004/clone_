@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="asset/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <form action="" method="POST" class="form" id="form-1">
+            <h3 class="heading">Đăng ký thành viên</h3>
+            <p class="desc">Zcim shop điện thoại hàng đầu việt nam</p>
+
+            <div class="form-group">
+                <label for="fullname" class="form-label">Tên đầu đủ</label>
+                <input id="fullname" type="text" class="form-control" placeholder="VD: Phạm Văn Man - ...@gmail.com">
+                <span class="outline-bt"></span>
+                <span class="form-message"></span>
+
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input id="password" type="password" class="form-control" placeholder="Nhập mật khẩu">
+                <span class="outline-bt"></span>
+                <span class="form-message"></span>
+            </div>
+
+            <button class="form-submit">Đăng ký</button>
+        </form>
+    </div>
+
+    <script src="asset/login.js"></script>
+    <script>
+        Validator({
+            form: '#form-1',
+            errorMessage: '.form-message',
+            rules: [
+                Validator.isRequired('#fullname'),
+                Validator.isMinLength('#password', 6),
+            ]
+        })
+    </script>
+</body>
+
+</html>
